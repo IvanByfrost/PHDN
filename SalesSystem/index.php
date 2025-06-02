@@ -25,6 +25,19 @@ if (isset($arrayUrl[2])){
     }
 }
 
-echo $controller." ".$method." ".$params;
+spl_autoload_register(function ($class) {
+if(file_exists(LBS.$class.".php")) 
+require LBS.$class.".php";
+});
+
+$controller = $controller."Controller";
+$ControllersPath = "Controllers/".$controller.".php";
+if (file_exists($ControllersPath)){
+    require $ControllersPath;
+    $controller = new $controller();
+}
+
+
+//echo $controller." ".$method." ".$params;
 
 ?>
