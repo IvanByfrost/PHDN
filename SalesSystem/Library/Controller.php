@@ -1,9 +1,13 @@
 <?php
 class Controller {
+    protected $view;
+    protected $model;
+
     public function __construct(){
         $this-> view = new Views();
         $this ->loadClassModel();
     }
+    
     public function loadClassModel(){
         $class = get_class($this);
         $array = explode("Controller", $class);
