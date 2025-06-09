@@ -7,6 +7,6 @@ class IndexController extends Controller{
    parent::__construct();      
     }
     public function Index(){
-        $this -> view -> Render($this, "Index");
+        $this -> view -> Render($this, "Index", null);
     }
 }
